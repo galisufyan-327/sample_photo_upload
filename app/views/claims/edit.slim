@@ -1,0 +1,5 @@
+= form_for @claim do |f|
+  p
+  	label My Avatar
+    = f.file_field :avatars, multiple: true
+    = f.submit "Upload"

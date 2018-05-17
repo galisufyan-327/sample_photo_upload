@@ -1,0 +1,8 @@
+#message.container
+  - if flash && flash.count > 0
+    - flash.each do |key, value|
+      br
+      .alert class="alert-#{key}"
+        a.close[data-dismiss="alert"]
+          | ×
+        = value.html_safe

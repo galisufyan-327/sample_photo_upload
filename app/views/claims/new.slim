@@ -1,0 +1,58 @@
+div
+  .info-text
+    p A fast and easy way to capture your claim photos and documents!
+  = render 'claims/flash'
+  .separator-div
+  .row.mr-2.ml-4.mt-3
+    p Claim no.: 2
+  .row.mr-2.ml-4
+    p Ali Sufyan
+
+  h3.ml-2
+    | Photo upload/capture
+  = form_for @claim, html: { multipart: true } do |f|
+    div.uploading-area
+      .row.pt-2.pb-4
+        .col-6
+          .image-box-area.pt-2.form-group.required
+            = f.label :damage_room_overview_1
+            br
+            = f.file_field :damage_room_overview_1, class: 'file-input'
+            .image-box
+              img#uploaded.uploaded-img
+        .col-6
+          .image-box-area.pt-2.form-group.required
+            = f.label :damage_room_overview_2
+            br
+            = f.file_field :damage_room_overview_2, class: 'file-input'
+            .image-box
+              img#uploaded.uploaded-img
+        .col-6
+          .image-box-area.pt-2.form-group.required
+            = f.label :detail_of_damage_1
+            br
+            = f.file_field :detail_of_damage_1, class: 'file-input'
+            .image-box
+              img#uploaded.uploaded-img
+        .col-6
+          .image-box-area.pt-2.form-group.required
+            = f.label :detail_of_damage_2
+            br
+            = f.file_field :detail_of_damage_2, class: 'file-input'
+            .image-box
+              img#uploaded.uploaded-img
+        .col-6
+          .image-box-area.pt-2.form-group
+            = f.label :additional_photos
+            br
+            = f.file_field :additional_photos, class: 'file-input'
+            .image-box
+              img#uploaded.uploaded-img
+
+    .row.p-4
+      = f.label :terms_of_services do
+        = f.check_box :terms_of_services, label: 'I agree to the Terms & Conditions', class: "mr-2"
+        | I agree to the Terms & Conditions
+    .actions.mb-4
+      = f.submit 'Send', class: 'btn-custom'
+    

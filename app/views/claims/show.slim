@@ -1,0 +1,30 @@
+div
+  .info-text
+    p A fast and easy way to capture your claim photos and documents!
+  .separator-div
+  .row.mr-2.ml-4.mt-3
+    p.mr-1 Claim no.:
+    = @claim.id
+  .row.mr-2.ml-4
+    p Ali Sufyan
+  h3.ml-2 Uploaded photos
+  .row.pt-2.pb-4
+    - if @claim.damage_room_overview_1.present?
+      .col-6
+        = image_tag @claim.damage_room_overview_1, class: 'display-img', width: 250, height: 250
+
+    - if @claim.damage_room_overview_2.present?
+      .col-6
+        = image_tag @claim.damage_room_overview_2, class: 'display-img', width: 250, height: 250
+
+    - if @claim.detail_of_damage_1.present?
+      .col-6
+        = image_tag @claim.detail_of_damage_1, class: 'display-img', width: 250, height: 250
+
+    - if @claim.detail_of_damage_2.present?
+      .col-6
+        = image_tag @claim.detail_of_damage_2, class: 'display-img', width: 250, height: 250
+
+    - if @claim.additional_photos.present?
+      .col-6
+        = image_tag @claim.additional_photos, class: 'display-img', width: 250, height: 250
